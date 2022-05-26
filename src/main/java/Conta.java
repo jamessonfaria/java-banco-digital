@@ -8,6 +8,7 @@ public abstract class Conta implements ITransacao {
     public Conta(){
         this.agencia = AGENCIA_PADRAO;
         this.numero = SEQUENCIAL;
+        this.saldo = 0.0;
         SEQUENCIAL++;
     }
 
@@ -25,6 +26,12 @@ public abstract class Conta implements ITransacao {
     public void transferir(Conta contaDestino, double valor) {
         this.sacar(valor);
         contaDestino.depositar(valor);
+    }
+
+    protected void detalheConta() {
+        System.out.println(String.format("Agencia: %d / Conta: %d / Saldo: %f",
+                this.agencia, this.numero, this.saldo));
+        System.out.println("--------------------------------------");
     }
 
     public int getAgencia() {
