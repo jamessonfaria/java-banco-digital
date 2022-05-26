@@ -15,19 +15,7 @@ public class Banco {
     private String nome;
     private List<Conta> contas;
 
-    public void listaContas(){
-        List<ListaClienteDTO> listaCliente = obtemDados();
-        System.out.println("--------------Listagem de Clientes-----------------");
-        for (ListaClienteDTO listaClienteDTO : listaCliente) {
-            System.out.println(String.format("Banco: %s", listaClienteDTO.banco));
-            System.out.println(String.format("Cliente: %s", listaClienteDTO.cliente));
-            System.out.println(String.format("Agencia: %s", listaClienteDTO.agencia));
-            System.out.println(String.format("Numero: %s", listaClienteDTO.numero));
-            System.out.println("---------------------------------------------------");
-        }
-    }
-
-    private List<ListaClienteDTO> obtemDados(){
+    public List<ListaClienteDTO> obtemDados(){
         return this.contas.stream()
                 .map(e -> {
                     ListaClienteDTO lista = new ListaClienteDTO();

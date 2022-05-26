@@ -1,5 +1,6 @@
 import exception.BancoDigitalException;
 import model.*;
+import service.BancoService;
 
 import java.util.ArrayList;
 
@@ -23,6 +24,8 @@ public class Start {
             add(ccc);
         }});
 
+        BancoService bancoService = new BancoService(banco);
+
         try{
             ccc.depositar(500.0);
             ccc.extrato();
@@ -34,7 +37,7 @@ public class Start {
             cc.extrato();
             cp.extrato();
 
-            banco.listaContas();
+            bancoService.listaContas();
 
             cp.sacar(1000);
 
