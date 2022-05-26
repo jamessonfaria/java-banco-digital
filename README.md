@@ -7,5 +7,16 @@ Repositório para implementação do projeto banco digital utilizando orientaç�
 + ContaCorrente 
 + ContaPoupanca
 + Conta
-+ Transacao
+
+### Interfaces
++ ITransacao
+
+### Exceptions
++ BancoDigitalException
+
+### Services
++ BancoService
+
+### DTO
++ ListaClienteDTO
 
